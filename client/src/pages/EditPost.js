@@ -13,7 +13,7 @@ export default function EditPost() {
     const baseUrl = process.env.BASE_URL
 
     useEffect(() => {
-        fetch('http://localhost:4000/post/'+id)
+        fetch('https://cvserver-3tbg.onrender.com/post/'+id)
           .then(response => {
             response.json().then(postInfo => {
               setTitle(postInfo.title);
@@ -33,7 +33,7 @@ export default function EditPost() {
         if (files?.[0]) {
             data.set('file', files?.[0]);
         }
-        const response = await fetch('http://localhost:4000/post', {
+        const response = await fetch('https://cvserver-3tbg.onrender.com/post', {
         method: 'PUT',
         body: data,
         credentials: 'include',
