@@ -25,18 +25,21 @@ app.use('/uploads', express.static(__dirname + '/uploads'))
 
 //db connect
 
-const db = process.env.DATABASE_URL
+// const db = process.env.DATABASE_URL
 
-mongoose.connect(db, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-    .then(() => {
-      console.log('Connected to MongoDB');
-    })
-    .catch((error) => {
-      console.error('Error connecting to MongoDB:', error.message);
-    });
+// mongoose.connect(db, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//   })
+//     .then(() => {
+//       console.log('Connected to MongoDB');
+//     })
+//     .catch((error) => {
+//       console.error('Error connecting to MongoDB:', error.message);
+//     });
+
+mongoose.connect('mongodb+srv://gustinbide:a2J6jMgHm4T2nqsT@cluster0.b8xycf4.mongodb.net/')
+
 
 
 app.post('/register', async (req,res) => {
